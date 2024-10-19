@@ -1,0 +1,11 @@
+<h1>Document Editor</h1>
+<editor [(ngModel)]="content" [init]="{
+        height: 800,
+        resize: false,
+        menubar: 'file edit view insert format tools table help',
+        plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+        toolbar: 'undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl',
+        setup: setupEditor
+      }" (onKeyup)="onContentChange($event)"></editor>
+<button (click)="saveDocument()">Save Document</button>
+<button (click)="printDocument()">Print Document</button>
